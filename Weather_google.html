@@ -1,0 +1,47 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Weather Application</title>
+<link rel="stylesheet" href="WeatherStyle.css">
+<script src="WeatherWidget.js"></script>
+	<style>
+      #map-canvas {
+        height: 500px;
+        margin: 0px;
+        padding: 0px
+      }
+      #panel {
+        position: absolute;
+        top: 5px;
+        left: 50%;
+        margin-left: -180px;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+</head>
+<body onload = "initialize(),getCurrentWeatherData()">
+	<div id="panel">
+      <input id="address" type="textbox" value="Sydney, NSW">
+      <input type="button" value="Geocode" onclick="codeAddress()">
+    </div>
+    <div id="map-canvas"></div>
+	<table class="myTable">
+		<tr>
+			<th>Location</th>
+			<th>Current Weather</th>
+
+		</tr>
+		<tr>
+			<td><div id="location"></div></td>
+			<td><div id="weatherNow"></div></td>
+
+		</tr>
+
+
+	</table>
+</body>
+</html>
